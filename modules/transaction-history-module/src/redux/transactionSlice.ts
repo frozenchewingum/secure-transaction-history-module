@@ -1,16 +1,15 @@
-// redux/transactionSlice.ts
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import transactionsData from '../data/transactions.json'; // Ensure correct path
-import { TransactionItem } from '../types'; // Ensure correct path
+import { TransactionData } from '../types'; // Ensure correct path
 
 interface TransactionState {
-  transactions: TransactionItem[];
+  transactions: TransactionData[];
   status: 'idle' | 'loading' | 'succeeded' | 'failed';
   error: string | null;
 }
 
 const initialState: TransactionState = {
-  transactions: transactionsData as TransactionItem[], // Type assertion
+  transactions: transactionsData as TransactionData[], // Type assertion
   status: 'idle',
   error: null,
 };
@@ -18,7 +17,13 @@ const initialState: TransactionState = {
 const transactionSlice = createSlice({
   name: 'transactions',
   initialState,
-  reducers: {},
+  reducers: {
+    addTransaction: (state, action: PayloadAction<TransactionData>) => {
+      state.transactions.push(action.payload);
+    },
+  },
 });
+
+export const { addTransaction } = transactionSlice.actions;
 
 export default transactionSlice.reducer;

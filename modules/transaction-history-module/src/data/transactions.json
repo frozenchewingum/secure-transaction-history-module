@@ -1,128 +1,64 @@
 [
   {
-    "id": "6f503433-4432-5102-a34a-a47e7e7fa146",
-    "type": "Credit",
-    "amount": 100.0,
-    "date": "2024-09-01T12:00:00Z",
-    "description": "Transfer to John Doe",
-    "status": "Completed"
-  },
-  {
-    "id": "647688dd-1b37-5381-bc9f-ee87cd65a491",
-    "type": "Debit",
-    "amount": 50.0,
-    "date": "2024-09-02T09:30:00Z",
-    "description": "Fund transfer from Jane Smith",
-    "status": "Pending"
-  },
-  {
-    "id": "3d4b5396-2af8-59eb-b80f-e7d45b18ce51",
+    "id": "cf325c45-2e32-58e8-840b-f5f31d52902b",
     "type": "Credit",
     "amount": 1.23,
-    "date": "2024-09-03T16:45:00Z",
+    "date": "2024-08-22T12:45:00Z",
     "description": "Interests earned",
     "status": "Completed"
   },
   {
-    "id": "59530a86-67ab-54f1-a228-fa761ab889d3",
-    "type": "Debit",
-    "amount": 75.0,
-    "date": "2024-09-04T08:15:00Z",
-    "description": "Transfer to XXX Sdn Bhd",
-    "status": "Failed"
-  },
-  {
-    "id": "3b079739-1a15-5193-ab43-d03689335288",
-    "type": "Credit",
-    "amount": 1.23,
-    "date": "2024-09-05T11:00:00Z",
-    "description": "Interests earned",
-    "status": "Completed"
-  },
-  {
-    "id": "595dcb0a-e545-5401-854d-599b7d4c49fc",
-    "type": "Debit",
-    "amount": 100.0,
-    "date": "2024-09-06T13:30:00Z",
-    "description": "Transfer to John Doe",
-    "status": "Pending"
-  },
-  {
-    "id": "b807b7d3-893f-5ce0-b030-f84bcd030e68",
-    "type": "Credit",
-    "amount": 1.23,
-    "date": "2024-09-07T14:00:00Z",
-    "description": "Interests earned",
-    "status": "Completed"
-  },
-  {
-    "id": "aaf1d19d-e17b-516b-88f7-0358c43b7bd2",
-    "type": "Debit",
-    "amount": 45.0,
-    "date": "2024-09-08T10:30:00Z",
-    "description": "Fund transfer from Jane Smith",
-    "status": "Completed"
-  },
-  {
-    "id": "cebc9e70-5854-5b75-add2-57588b9a3ddb",
-    "type": "Credit",
-    "amount": 1.23,
-    "date": "2024-09-09T15:00:00Z",
-    "description": "Interests earned",
-    "status": "Completed"
-  },
-  {
-    "id": "897277a5-cd23-58f6-9951-08336e26fc17",
-    "type": "Debit",
-    "amount": 60.0,
-    "date": "2024-09-10T17:30:00Z",
-    "description": "Transfer to XXX Sdn Bhd",
-    "status": "Failed"
-  },
-  {
-    "id": "3f49816d-1267-56a3-b3c6-564579e8fd42",
-    "type": "Credit",
-    "amount": 1.23,
-    "date": "2024-09-11T12:45:00Z",
-    "description": "Interests earned",
-    "status": "Completed"
-  },
-  {
-    "id": "518a05d4-fa1b-5d90-a438-fd9bf857edc5",
+    "id": "2a2268d0-0477-5b0a-8b71-6e879b818190",
     "type": "Debit",
     "amount": 20.0,
-    "date": "2024-09-12T09:15:00Z",
+    "date": "2024-08-22T09:15:00Z",
     "description": "Transfer to John Doe",
     "status": "Completed"
   },
   {
-    "id": "8b5d582c-b344-50bb-b1bb-5147dab14424",
+    "id": "440416de-91e2-5ed9-bef0-09bf0212eff4",
     "type": "Credit",
     "amount": 1.23,
-    "date": "2024-09-13T14:20:00Z",
+    "date": "2024-08-23T14:20:00Z",
     "description": "Interests earned",
     "status": "Completed"
   },
   {
-    "id": "e5abfc42-44ba-537a-bf7a-72617e3c192c",
+    "id": "6b35a406-3c53-5519-8be9-03b2a0415a52",
     "type": "Debit",
-    "amount": 10.0,
-    "date": "2024-09-14T08:45:00Z",
+    "amount": 56.0,
+    "date": "2024-08-24T08:45:00Z",
     "description": "Fund transfer from Jane Smith",
     "status": "Completed"
   },
   {
-    "id": "6063e92b-4bcb-5b6d-828f-862c8513e4ab",
+    "id": "6b35a406-3c53-5519-8be9-03b2a0a1e055",
+    "type": "Debit",
+    "amount": 88.0,
+    "date": "2024-08-24T08:55:24Z",
+    "description": "Fund transfer from Jane Smith",
+    "status": "Completed"
+  },
+  {
+    "id": "6b35a406-3c53-5519-8be9-03b2a0465059",
+    "type": "Debit",
+    "amount": 10.0,
+    "date": "2024-08-24T12:43:12Z",
+    "description": "Fund transfer from Jane Smith",
+    "status": "Completed"
+  },
+  {
+    "id": "eb3b8170-e499-5943-a795-6426a24343f2",
     "type": "Credit",
     "amount": 1.23,
-    "date": "2024-09-15T16:00:00Z",
+    "date": "2024-08-25T16:00:00Z",
     "description": "Interests earned",
     "status": "Completed"
   },
   {
-    "id": "8421b144-0350-5ad0-b441-bd5840dcd3f5",
+    "id": "8421b144-0350-5ad0-b441-ba5840dcd3f5",
     "type": "Credit",
-    "amount": 100.0,
+    "amount": 1650.0,
     "date": "2024-09-01T12:00:00Z",
     "description": "Transfer to John Doe",
     "status": "Completed"
@@ -130,7 +66,7 @@
   {
     "id": "be2d8815-4d7e-5deb-be92-fda860dc8992",
     "type": "Debit",
-    "amount": 50.0,
+    "amount": 520.0,
     "date": "2024-09-02T09:30:00Z",
     "description": "Fund transfer from Jane Smith",
     "status": "Pending"
@@ -162,7 +98,7 @@
   {
     "id": "b465c71a-0cb3-5383-965c-f6c955eeb55c",
     "type": "Debit",
-    "amount": 100.0,
+    "amount": 135.0,
     "date": "2024-09-06T13:30:00Z",
     "description": "Transfer to John Doe",
     "status": "Pending"
@@ -224,7 +160,7 @@
     "status": "Completed"
   },
   {
-    "id": "6b35a406-3c53-5519-8be9-03b2a041505e",
+    "id": "6b35a406-3c53-5519-8be9-03b2a041575e",
     "type": "Debit",
     "amount": 10.0,
     "date": "2024-09-14T08:45:00Z",
@@ -237,6 +173,22 @@
     "amount": 1.23,
     "date": "2024-09-15T16:00:00Z",
     "description": "Interests earned",
+    "status": "Completed"
+  },
+  {
+    "id": "2a2268d0-0477-5b0a-8b71-6e879b801190",
+    "type": "Debit",
+    "amount": 1200.0,
+    "date": "2024-09-12T09:15:00Z",
+    "description": "Transfer to John Doe",
+    "status": "Completed"
+  },
+  {
+    "id": "2a2268d0-0477-5b0a-8b71-6e87db811190",
+    "type": "Debit",
+    "amount": 50.00,
+    "date": "2024-09-12T09:15:00Z",
+    "description": "Transfer to John Doe",
     "status": "Completed"
   }
 ]

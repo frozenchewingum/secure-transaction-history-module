@@ -1,27 +1,66 @@
-// screens/TransactionHistory.tsx
-import React from 'react';
-import { useSelector } from 'react-redux';
-import { RootState } from '../redux/store'; // Adjust the path as needed
-import { View, Text, FlatList, StyleSheet } from 'react-native';
-import { TransactionItem } from '../types'; // Adjust the path as needed
-import { SafeAreaView } from 'react-native-safe-area-context';
+import React, { useState } from "react";
+import {
+  View,
+  Text,
+  Alert,
+  StyleSheet,
+} from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
+import { TransactionList } from "../components/TransactionList";
+import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
+import * as LocalAuthentication from "expo-local-authentication";
+
 
 const TransactionHistory: React.FC = () => {
-  const transactions = useSelector((state: RootState) => state.transactions.transactions);
+  const [isAuthenticate, setIsAuthenticate] = useState<boolean>(false);
+  const [isMask, setIsMask] = useState<boolean>(true);
+
+  const toggleMask = async () => {
+    if(!isAuthenticate) {
+      await authenticate().then((response) => {
+        if(response?.success) {
+          setIsMask((prev) => !prev);
+        }
+      });
+    } else {
+      setIsMask((prev) => !prev);
+    }
+  };
+
+  const authenticate = async () => {
+    const isCompatible = await LocalAuthentication.hasHardwareAsync();
+    if (!isCompatible) {
+      Alert.alert("Device does not support biometrics");
+      return;
+    }
+
+    const result = await LocalAuthentication.authenticateAsync({
+      promptMessage: "Please verify to view the amount",
+      fallbackLabel: "Use Passcode",
+    });
+
+    if (result.success) {
+      setIsAuthenticate(true);
+    } else {
+    }
+
+    return result;
+  };
 
   return (
     <SafeAreaView style={styles.container}>
-      <Text style={styles.header}>Transaction History</Text>
-      <FlatList
-        data={transactions}
-        keyExtractor={(item) => item.id}
-        renderItem={({ item }: { item: TransactionItem }) => (
-          <View style={styles.item}>
-            <Text> { new Date(item.date).toLocaleDateString() } </Text>
-            <Text>{item.description}: {item.amount}</Text>
-          </View>
-        )}
-      />
+      <View style={styles.headerContainer}>
+        <Text style={styles.header}>Transaction History</Text>
+        <MaterialCommunityIcons
+          name={isMask ? "eye" : "eye-off"}
+          size={28}
+          color="#212a2f"
+          onPress={toggleMask}
+        />
+      </View>
+      <View style={styles.listContainer}>
+      <TransactionList isMasked={isMask} />
+      </View>
     </SafeAreaView>
   );
 };
@@ -29,18 +68,23 @@ const TransactionHistory: React.FC = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 16,
+    backgroundColor: "#7c9faf",
+  },
+  headerContainer: {
+    padding: 20,
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
   },
   header: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    marginBottom: 16,
+    fontSize: 25,
+    fontWeight: "bold",
+    color: "#212a2f"
   },
-  item: {
-    padding: 16,
-    borderBottomWidth: 1,
-    borderBottomColor: '#ccc',
-  },
+  listContainer: {
+    padding: 20
+  }
 });
 
 export default TransactionHistory;

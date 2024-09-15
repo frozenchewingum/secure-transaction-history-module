@@ -1,15 +1,10 @@
 import React, { useEffect, useState } from "react";
-import {
-  View,
-  Text,
-  Alert,
-  Pressable,
-  StyleSheet,
-} from "react-native";
+import { View, Text, Alert, Pressable, StyleSheet } from "react-native";
 import { Image } from "expo-image";
 import { useRouter } from "expo-router";
 import * as LocalAuthentication from "expo-local-authentication";
 import { SafeAreaView } from "react-native-safe-area-context";
+
 export default function Index() {
   const [isAuthenticateFailed, setIsAuthenticateFailed] =
     useState<boolean>(false);
@@ -32,7 +27,7 @@ export default function Index() {
     });
 
     if (result.success) {
-      router.replace("/TransactionHistoryScreen");
+      router.navigate("/TransactionHistoryScreen");
     } else {
       setIsAuthenticateFailed(true);
     }
@@ -59,11 +54,11 @@ export default function Index() {
       ) : (
         <View style={styles.container}>
           <View style={styles.wrapper}>
-          <Image
-            source={require("../assets/images/react-logo.png")}
-            style={styles.image}
+            <Image
+              source={require("../assets/images/react-logo.png")}
+              style={styles.image}
             />
-            </View>
+          </View>
         </View>
       )}
     </>
@@ -72,8 +67,8 @@ export default function Index() {
 
 const styles = StyleSheet.create({
   container: {
-    width: '100%',
-    height: '100%',
+    width: "100%",
+    height: "100%",
     backgroundColor: "#7c9faf",
   },
   wrapper: {
@@ -118,5 +113,5 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     letterSpacing: 0.25,
     color: "white",
-  }
+  },
 });
