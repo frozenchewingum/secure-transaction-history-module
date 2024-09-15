@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.7",
+    "expo-clipboard": "^6.0.3",
     "expo-dev-client": "^4.0.26",
     "react-native-uuid": "^2.0.2",
     "react-redux": "^9.1.2"

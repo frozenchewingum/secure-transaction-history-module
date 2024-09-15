@@ -16,6 +16,9 @@
       "supportsTablet": true,
       "infoPlist": {
         "NSFaceIDUsageDescription ": "This app uses the FaceID to validate user identity."
+      },
+      "entitlements": {
+        "com.apple.developer.networking.wifi-info": true
       }
     },
     "android": {

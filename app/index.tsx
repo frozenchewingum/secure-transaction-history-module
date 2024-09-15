@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { View, Text, Alert, Pressable, StyleSheet } from "react-native";
+import { View, Text, Alert, Pressable, StyleSheet, Dimensions } from "react-native";
 import { Image } from "expo-image";
 import { useRouter } from "expo-router";
 import * as LocalAuthentication from "expo-local-authentication";
 import { SafeAreaView } from "react-native-safe-area-context";
+
+const { width, height } = Dimensions.get('window');
 
 export default function Index() {
   const [isAuthenticateFailed, setIsAuthenticateFailed] =
@@ -74,7 +76,7 @@ const styles = StyleSheet.create({
   wrapper: {
     display: "flex",
     justifyContent: "center",
-    width: "75%",
+    width: width*0.75,
     height: "100%",
     margin: "auto",
   },
@@ -84,17 +86,17 @@ const styles = StyleSheet.create({
     alignContent: "center",
   },
   title: {
-    fontSize: 25,
+    fontSize: width*0.05,
     fontWeight: "500",
     color: "#455962",
   },
   subTitle: {
-    fontSize: 20,
+    fontSize: width*0.04,
     fontWeight: "100",
   },
   image: {
-    width: 200,
-    height: 200,
+    width: width*0.5,
+    height: width*0.5,
     margin: "auto",
   },
   button: {
@@ -102,16 +104,18 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     paddingVertical: 12,
     paddingHorizontal: 32,
-    borderRadius: 20,
+    borderRadius: height*0.05,
     elevation: 3,
     backgroundColor: "#212a2f",
     marginTop: 15,
+    width: width*0.75,
+    height: height*0.05
   },
   buttonText: {
-    fontSize: 16,
+    fontSize: width*0.04,
     lineHeight: 21,
     fontWeight: "bold",
     letterSpacing: 0.25,
     color: "white",
-  },
+  }
 });

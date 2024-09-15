@@ -1,7 +1,7 @@
 [
   {
     "id": "cf325c45-2e32-58e8-840b-f5f31d52902b",
-    "type": "Credit",
+    "type": "Debit",
     "amount": 1.23,
     "date": "2024-08-22T12:45:00Z",
     "description": "Interests earned",
@@ -9,7 +9,7 @@
   },
   {
     "id": "2a2268d0-0477-5b0a-8b71-6e879b818190",
-    "type": "Debit",
+    "type": "Credit",
     "amount": 20.0,
     "date": "2024-08-22T09:15:00Z",
     "description": "Transfer to John Doe",
@@ -17,7 +17,7 @@
   },
   {
     "id": "440416de-91e2-5ed9-bef0-09bf0212eff4",
-    "type": "Credit",
+    "type": "Debit",
     "amount": 1.23,
     "date": "2024-08-23T14:20:00Z",
     "description": "Interests earned",
@@ -49,7 +49,7 @@
   },
   {
     "id": "eb3b8170-e499-5943-a795-6426a24343f2",
-    "type": "Credit",
+    "type": "Debit",
     "amount": 1.23,
     "date": "2024-08-25T16:00:00Z",
     "description": "Interests earned",
@@ -73,7 +73,7 @@
   },
   {
     "id": "afe58872-9dee-525f-b889-41f320c2cff4",
-    "type": "Credit",
+    "type": "Debit",
     "amount": 1.23,
     "date": "2024-09-03T16:45:00Z",
     "description": "Interests earned",
@@ -89,7 +89,7 @@
   },
   {
     "id": "e5ed5d80-9b2b-56b3-ad56-46495b1532c4",
-    "type": "Credit",
+    "type": "Debit",
     "amount": 1.23,
     "date": "2024-09-05T11:00:00Z",
     "description": "Interests earned",
@@ -97,7 +97,7 @@
   },
   {
     "id": "b465c71a-0cb3-5383-965c-f6c955eeb55c",
-    "type": "Debit",
+    "type": "Credit",
     "amount": 135.0,
     "date": "2024-09-06T13:30:00Z",
     "description": "Transfer to John Doe",
@@ -105,7 +105,7 @@
   },
   {
     "id": "f4b17169-d176-5876-9ae3-6b2e5b3c4a18",
-    "type": "Credit",
+    "type": "Debit",
     "amount": 1.23,
     "date": "2024-09-07T14:00:00Z",
     "description": "Interests earned",
@@ -121,7 +121,7 @@
   },
   {
     "id": "be849f55-4924-5800-8c8c-8ce840e376ec",
-    "type": "Credit",
+    "type": "Debit",
     "amount": 1.23,
     "date": "2024-09-09T15:00:00Z",
     "description": "Interests earned",
@@ -137,7 +137,7 @@
   },
   {
     "id": "cf325c45-2e32-58e8-840b-f5f31d5290ab",
-    "type": "Credit",
+    "type": "Debit",
     "amount": 1.23,
     "date": "2024-09-11T12:45:00Z",
     "description": "Interests earned",
@@ -145,7 +145,7 @@
   },
   {
     "id": "2a2268d0-0477-5b0a-8b71-6e879b811190",
-    "type": "Debit",
+    "type": "Credit",
     "amount": 20.0,
     "date": "2024-09-12T09:15:00Z",
     "description": "Transfer to John Doe",
@@ -153,7 +153,7 @@
   },
   {
     "id": "440416de-91e2-5ed9-bef0-09bf0219eff4",
-    "type": "Credit",
+    "type": "Debit",
     "amount": 1.23,
     "date": "2024-09-13T14:20:00Z",
     "description": "Interests earned",
@@ -169,15 +169,23 @@
   },
   {
     "id": "eb3b8170-e499-5943-a795-6466a24343f2",
-    "type": "Credit",
+    "type": "Debit",
     "amount": 1.23,
     "date": "2024-09-15T16:00:00Z",
     "description": "Interests earned",
     "status": "Completed"
   },
   {
+    "id": "2a2268d0-0477-5b0a-8b71-6e87db811190",
+    "type": "Credit",
+    "amount": 378.00,
+    "date": "2024-09-15T01:00:00Z",
+    "description": "Transfer to John Doe",
+    "status": "Completed"
+  },
+  {
     "id": "2a2268d0-0477-5b0a-8b71-6e879b801190",
-    "type": "Debit",
+    "type": "Credit",
     "amount": 1200.0,
     "date": "2024-09-12T09:15:00Z",
     "description": "Transfer to John Doe",
@@ -185,7 +193,7 @@
   },
   {
     "id": "2a2268d0-0477-5b0a-8b71-6e87db811190",
-    "type": "Debit",
+    "type": "Credit",
     "amount": 50.00,
     "date": "2024-09-12T09:15:00Z",
     "description": "Transfer to John Doe",

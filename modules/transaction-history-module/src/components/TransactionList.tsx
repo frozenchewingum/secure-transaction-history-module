@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import {
   useNavigation,
   ParamListBase,
@@ -11,6 +11,7 @@ import {
   SectionList,
   RefreshControl,
   StyleSheet,
+  Dimensions,
   type ViewProps,
 } from "react-native";
 import { RootState } from "../redux/store";
@@ -32,6 +33,8 @@ type MonthlySection = {
 export type TransactionListProps = ViewProps & {
   isMasked: boolean;
 };
+
+const { width, height } = Dimensions.get('window');
 
 export const TransactionList = React.memo(
   ({ isMasked }: TransactionListProps) => {
@@ -89,7 +92,10 @@ export const TransactionList = React.memo(
           data: Object.entries(days)
             .map(([day, transactions]) => ({
               title: day,
-              data: transactions.sort((a, b)=> new Date(b.date).getTime() - new Date(a.date).getTime()),
+              data: transactions.sort(
+                (a, b) =>
+                  new Date(b.date).getTime() - new Date(a.date).getTime()
+              ),
             }))
             .sort(
               (a, b) =>
@@ -108,7 +114,7 @@ export const TransactionList = React.memo(
       return date.toLocaleString("default", { month: "long" });
     };
 
-    const onRefresh = React.useCallback(() => {
+    const onRefresh = useCallback(() => {
       setRefreshing(true);
       setTimeout(() => {
         handleAddTransaction();
@@ -117,12 +123,16 @@ export const TransactionList = React.memo(
     }, []);
 
     const handleAddTransaction = () => {
+      const type = Math.random() < 0.5 ? "Credit" : "Debit";
       const newTransaction: TransactionData = {
         id: uuid.v4() as string, // You can generate a unique id
         amount: parseFloat((Math.random() * (1000 - 1) + 1).toFixed(2)),
         date: new Date().toISOString(),
-        description: "Fund Transfer",
-        type: "Credit",
+        description:
+          type === "Debit"
+            ? "Fund transfer from Jane Smith"
+            : "Transfer to John Doe",
+        type: type,
         status: "Completed",
       };
       dispatch(addTransaction(newTransaction));
@@ -147,9 +157,11 @@ export const TransactionList = React.memo(
           <>
             {data.map((dailySection, index) => (
               <SectionList
-                key={index}
+                key={index+new Date().getTime()}
                 sections={[dailySection]}
                 keyExtractor={(item) => item.id}
+                initialNumToRender={10}
+                maxToRenderPerBatch={5}
                 renderItem={({ item, index, section }) => (
                   <TransactionItem
                     key={item.id}
@@ -188,19 +200,20 @@ const styles = StyleSheet.create({
   header: {
     paddingTop: 5,
     paddingBottom: 5,
+    backgroundColor: "#7c9faf"
   },
   headerText: {
-    fontSize: 18,
+    fontSize: width*0.05,
     fontWeight: "bold",
-    color: "#212a2f",
+    color: "#e5e5e5",
   },
   subHeader: {
     paddingTop: 5,
     paddingBottom: 5,
   },
   subHeaderText: {
-    fontSize: 16,
-    color: "#212a2fa8",
+    fontSize: width*0.04,
+    color: "#f0f0f088",
     fontWeight: "bold",
   },
 });

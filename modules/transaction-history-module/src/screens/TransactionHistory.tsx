@@ -1,24 +1,20 @@
 import React, { useState } from "react";
-import {
-  View,
-  Text,
-  Alert,
-  StyleSheet,
-} from "react-native";
+import { View, Text, Alert, StyleSheet, Dimensions } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { TransactionList } from "../components/TransactionList";
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 import * as LocalAuthentication from "expo-local-authentication";
 
+const { width, height } = Dimensions.get("window");
 
 const TransactionHistory: React.FC = () => {
   const [isAuthenticate, setIsAuthenticate] = useState<boolean>(false);
   const [isMask, setIsMask] = useState<boolean>(true);
 
   const toggleMask = async () => {
-    if(!isAuthenticate) {
+    if (!isAuthenticate) {
       await authenticate().then((response) => {
-        if(response?.success) {
+        if (response?.success) {
           setIsMask((prev) => !prev);
         }
       });
@@ -53,13 +49,13 @@ const TransactionHistory: React.FC = () => {
         <Text style={styles.header}>Transaction History</Text>
         <MaterialCommunityIcons
           name={isMask ? "eye" : "eye-off"}
-          size={28}
-          color="#212a2f"
+          size={width * 0.075}
+          color="#f0f0f088"
           onPress={toggleMask}
         />
       </View>
       <View style={styles.listContainer}>
-      <TransactionList isMasked={isMask} />
+        <TransactionList isMasked={isMask} />
       </View>
     </SafeAreaView>
   );
@@ -71,20 +67,21 @@ const styles = StyleSheet.create({
     backgroundColor: "#7c9faf",
   },
   headerContainer: {
-    padding: 20,
+    paddingTop: 15,
+    paddingHorizontal: 20,
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
   },
   header: {
-    fontSize: 25,
+    fontSize: width * 0.07,
     fontWeight: "bold",
-    color: "#212a2f"
+    color: "#e5e5e5",
   },
   listContainer: {
-    padding: 20
-  }
+    padding: 20,
+  },
 });
 
 export default TransactionHistory;
